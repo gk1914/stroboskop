@@ -15,7 +15,6 @@ window.addEventListener('load', function() {
 	//Odstrani barve
 	var odstrani = function(event) {
         document.getElementById("barve").innerHTML = "";
-        console.log("krneki");
 	}
 		
 	document.querySelector("#odstraniBarve") 
@@ -41,6 +40,11 @@ window.addEventListener('load', function() {
 	
 	var stop = function(event) {
 		ustavi = true;
+		var start = document.querySelector("#start");
+		start.innerHTML = "Zaženi stroboskop";
+		start.removeEventListener('click', stop);
+		start.addEventListener('click', zagon);
+		
 	}
 	
 	var zagon = function(event) {
